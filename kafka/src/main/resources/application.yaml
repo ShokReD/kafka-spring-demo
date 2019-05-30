@@ -1,0 +1,7 @@
+kafka:
+  bootstrap-server: localhost:9092
+  group-id-config: kafka-demo
+  output-topicname: output-topic
+  input-topicname: input-topic
+  partition-count: 6
+  replication-factor: 1
