@@ -67,8 +67,6 @@ class ProducerServiceImplTest {
     }
 
     private fun initConsumer() {
-        //        consumerProps.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
-        //        consumerProps.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, new JsonDeserializer<>(Pair.class));
         consumer = DefaultKafkaConsumerFactory(
                 mapOf(
                         ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG to embeddedKafkaBroker.brokerAddresses.joinToString(separator = ",") {

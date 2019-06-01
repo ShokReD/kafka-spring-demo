@@ -22,4 +22,8 @@ class Pair<F : Any, S : Any> constructor(){
         result = 31 * result + second.hashCode()
         return result
     }
+
+    override fun toString(): String {
+        return "Pair(first=$first, second=$second)"
+    }
 }

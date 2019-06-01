@@ -20,6 +20,17 @@ class ProducerConfiguration {
 
     @Bean
     fun <T> producerFactory(): ProducerFactory<String, T> {
+        /* here we can configure producer through spring.kafka.producer.{ProducerConfig.properties}
+         * for example "spring.kafka.producer.bootstrap.servers"
+         * in application.yaml this config would look like:
+         *
+         * spring:
+         *   kafka:
+         *     producer:
+         *       bootstrap.servers: localhost:9092
+         *       ker.serializer: org.apache.kafka.common.serialization.StringSerializer
+         *       value.serializer: org.springframework.kafka.support.serializer.JsonSerializer
+        */
         val props = mapOf(
                 ProducerConfig.BOOTSTRAP_SERVERS_CONFIG to kafkaProperties.bootstrapServer,
                 ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG to StringSerializer::class.java,
